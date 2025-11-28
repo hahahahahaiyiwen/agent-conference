@@ -39,7 +39,7 @@ dotnet restore
 dotnet run
 ```
 
-By default the API listens on `https://localhost:7132` and `http://localhost:5132`. Note the URL you plan to expose to the frontend.
+By default the API listens on `https://localhost:7129` and `http://localhost:5141`. Note the URL you plan to expose to the frontend.
 
 ### 2. Configure the frontend
 
@@ -53,14 +53,14 @@ npm install
 Set the API base URL environment variable before starting the dev server:
 
 ```pwsh
-setx VITE_API_BASE_URL "https://localhost:7132"
+setx VITE_API_BASE_URL "http://localhost:5141"
 # restart the terminal so the new value is loaded
 ```
 
 For macOS/Linux shells:
 
 ```bash
-export VITE_API_BASE_URL=https://localhost:7132
+export VITE_API_BASE_URL=http://localhost:5141
 ```
 
 Start the Vite dev server:
