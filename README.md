@@ -6,6 +6,9 @@ LLM*s*-as-Judge
 
 Introducing agent-conference, a multi-agent system that leverages general-purpose models with minimal prompt engineering to orchestrate debates and form consensus, creating a "meta-agent" evaluator that's dynamic, collaborative, and less prone to the biases of a single LLM judge.
 
+<img width="1202" height="643" alt="image" src="https://github.com/user-attachments/assets/ba99ac91-ef25-4b63-9302-5a7d4ccc9d5c" />
+
+
 ## Quick Start
 
 ### Prerequisites
