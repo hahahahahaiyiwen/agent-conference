@@ -4,7 +4,7 @@ LLM*s*-as-Judge
 
 ## Introduction
 
-Introducing AgentConference, a system that leverages general-purpose models with minimal prompt engineering to orchestrate debates and form consensus, creating a "meta-agent" evaluator that's dynamic, collaborative, and less prone to the biases of a single LLM judge.
+Introducing agent-conference, a multi-agent system that leverages general-purpose models with minimal prompt engineering to orchestrate debates and form consensus, creating a "meta-agent" evaluator that's dynamic, collaborative, and less prone to the biases of a single LLM judge.
 
 ## Quick Start
 
@@ -71,12 +71,3 @@ npm run dev
 
 Vite serves the UI at `http://localhost:5173` by default. Open it in a browser; the UI proxies calls to the API using the configured `VITE_API_BASE_URL`.
 
-### 3. Optional: serve frontend from the API
-
-To host everything from one origin, build the frontend and copy the output into the API's static files folder (for example `wwwroot`). Then update `Program.cs` to serve static files and map the SPA fallback. In that setup you can omit the `VITE_API_BASE_URL` because requests come from the same origin.
-
-### Troubleshooting
-
-- **CORS errors:** ensure the API has CORS enabled for the frontend origin when running separately.
-- **Missing Azure settings:** double-check the endpoint and deployment IDs in `appsettings.json`.
-- **Frontend cannot reach API:** confirm `VITE_API_BASE_URL` matches the API URL (schema + host + port).
