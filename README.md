@@ -31,9 +31,6 @@ The API expects its settings in `src/AgentConference.WebApi/appsettings.json`. U
 }
 ```
 
-Identity based credential will be used if no API Key is provided. Please make sure run following commands before using:
-az login
-
 Then restore and run the Web API:
 
 ```pwsh
@@ -43,6 +40,13 @@ dotnet run
 ```
 
 By default the API listens on `https://localhost:7129` and `http://localhost:5141`. Note the URL you plan to expose to the frontend.
+
+#### Azure AI Service Authentication
+Identity based credential will be used if no API Key is provided. Please make sure run following commands before using:
+az login
+
+#### Round robin assignment of models to attendees
+When running the conference, the attendees will be assigned to one of the model deployments. For example, when application is configured with deployment names ["gpt-4-mini", "gpt-5-mini"], a conference that requires two attendees will have one attendee assigned to use "gpt-4-mini" and the other attendee assigned to use "gpt-5-mini".
 
 ### 2. Configure the frontend
 
@@ -56,7 +60,7 @@ npm install
 Set the API base URL environment variable before starting the dev server:
 
 ```pwsh
-setx VITE_API_BASE_URL "http://localhost:5141"
+$echo:VITE_API_BASE_URL="http://localhost:5141"
 # restart the terminal so the new value is loaded
 ```
 
@@ -73,4 +77,3 @@ npm run dev
 ```
 
 Vite serves the UI at `http://localhost:5173` by default. Open it in a browser; the UI proxies calls to the API using the configured `VITE_API_BASE_URL`.
-
